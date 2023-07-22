@@ -1,25 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useReducer,useEffect } from 'react';
+import shopReducer from './ShopReducer';
+import axios from 'axios';
 
-function App() {
+const App = () => {
+  const apiUrl = "https://fakestoreapi.com/products";
+  const productList = [];
+  const [list, dispatch] = useReducer(shopReducer, productList )
+
+  useEffect(() => {
+      fetchApi()
+  },[])
+
+  const fetchApi = async () => {
+    try {
+    const response = await axios.get(apiUrl);
+    dispatch({type: 'render_list', message: response.data})
+    }
+    catch (error){
+     console.log(error)
+    }
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+         <ul>
+          {list.map((li) => (
+            <li key={li.id}>{li.title}</li>
+          ))}
+         </ul>
+    </>
+  )
 }
 
-export default App;
+export default App
