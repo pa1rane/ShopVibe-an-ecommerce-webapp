@@ -1,7 +1,9 @@
-import React, { useReducer,useEffect } from 'react';
+import React, { useReducer,useEffect,createContext } from 'react';
 import shopReducer from './ShopReducer';
 import axios from 'axios';
+import ProductList from './component/ProductList';
 
+const ShopContext = createContext();
 const App = () => {
   const apiUrl = "https://fakestoreapi.com/products";
   const productList = [];
@@ -22,14 +24,11 @@ const App = () => {
   }
 
   return (
-    <>
-         <ul>
-          {list.map((li) => (
-            <li key={li.id}>{li.title}</li>
-          ))}
-         </ul>
-    </>
+    <ShopContext.Provider value={list}>
+         <ProductList/>
+    </ShopContext.Provider>
   )
 }
 
-export default App
+export default App;
+export {ShopContext};
