@@ -1,7 +1,7 @@
 import React, { useReducer,useEffect,createContext } from 'react';
 import shopReducer from './ShopReducer';
 import axios from 'axios';
-import ProductList from './component/ProductList';
+import Products from './Products';
 
 const ShopContext = createContext();
 const App = () => {
@@ -25,7 +25,7 @@ const App = () => {
 
   return (
     <ShopContext.Provider value={list}>
-         <ProductList/>
+         <Products/>
     </ShopContext.Provider>
   )
 }
