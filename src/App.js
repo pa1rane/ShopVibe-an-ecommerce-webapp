@@ -2,6 +2,7 @@ import React, { useReducer,useEffect,createContext, useState } from 'react';
 import shopReducer from './ShopReducer';
 import axios from 'axios';
 import Products from './Products';
+import GridLoader from "react-spinners/GridLoader";
 
 const ShopContext = createContext();
 const App = () => {
@@ -28,7 +29,14 @@ const App = () => {
 
   return (
     <ShopContext.Provider value={[list, dispatch]}>
-       {loading ? <div>Loading...</div> : <Products/>}
+       {loading ? 
+       <GridLoader
+        color="#black"
+        loading={loading}
+        size={150}
+        aria-label="Loading Spinner"
+        data-testid="loader"
+      /> : <Products/>}
     </ShopContext.Provider>
   )
 }
