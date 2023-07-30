@@ -34,7 +34,7 @@ const App = () => {
     <ShopContext.Provider value={[list, dispatch]}>
        {loading ? 
        <GridLoader
-        color="#black"
+        color="black"
         loading={loading}
         size={150}
         aria-label="Loading Spinner"
