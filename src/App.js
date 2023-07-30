@@ -3,6 +3,8 @@ import shopReducer from './ShopReducer';
 import axios from 'axios';
 import Products from './Products';
 import GridLoader from "react-spinners/GridLoader";
+import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
+import ProductDetails from './component/ProductDetails';
 
 const ShopContext = createContext();
 const App = () => {
@@ -28,6 +30,7 @@ const App = () => {
   }
 
   return (
+    <Router>
     <ShopContext.Provider value={[list, dispatch]}>
        {loading ? 
        <GridLoader
@@ -36,8 +39,15 @@ const App = () => {
         size={150}
         aria-label="Loading Spinner"
         data-testid="loader"
-      /> : <Products/>}
+      /> : (
+        <Routes>
+     <Route path="/" element={<Products/>}/>
+     <Route path="/products/:id" element={<ProductDetails/>}/>
+      </Routes>
+      )
+      }
     </ShopContext.Provider>
+    </Router>
   )
 }
 
