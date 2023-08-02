@@ -1,4 +1,7 @@
 import React from 'react';
+import {BsFillBookmarkHeartFill} from 'react-icons/bs';
+import {BsCartCheckFill} from 'react-icons/bs';
+import {BiSolidUserCircle} from 'react-icons/bi';
 
 const Navbar = () => {
   return (
@@ -14,11 +17,11 @@ const Navbar = () => {
       </div>
 
       <div className="right">
-      <ul className="flex mr-10 gap-10 className='hover:cursor-pointer'">
-       <li className='hover:cursor-pointer'>WishList</li>
-       <li className='hover:cursor-pointer'>Cart</li>
-       <li className='hover:cursor-pointer'>User</li>
-      </ul>
+      <div className="flex items-center mr-10 gap-10 className='hover:cursor-pointer'">
+       <BsFillBookmarkHeartFill className='hover:cursor-pointer w-6 h-6'/>
+       <BsCartCheckFill className='hover:cursor-pointer w-6 h-6'/>
+       <BiSolidUserCircle className='hover:cursor-pointer w-7 h-7'/>
+      </div>
       </div>
       </div>
     </>
