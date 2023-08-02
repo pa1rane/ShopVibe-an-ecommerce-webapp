@@ -5,6 +5,7 @@ import Products from './Products';
 import GridLoader from "react-spinners/GridLoader";
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import ProductDetails from './component/ProductDetails';
+import Navbar from './Navbar';
 
 const ShopContext = createContext();
 const App = () => {
@@ -30,7 +31,9 @@ const App = () => {
   }
 
   return (
+    <div className='flex flex-col'>
     <Router>
+    <Navbar/>
     <ShopContext.Provider value={[list, dispatch]}>
        {loading ? 
        <GridLoader
@@ -48,6 +51,7 @@ const App = () => {
       }
     </ShopContext.Provider>
     </Router>
+    </div>
   )
 }
 

@@ -32,6 +32,7 @@ const FilterSection = () => {
 
   return (
     <>
+    <div className='flex'>
     <div className="flex flex-col">
       <input type="text" placeholder='Search' value={input} onChange={handleChange}/>
       <h3>Category</h3>
@@ -43,6 +44,7 @@ const FilterSection = () => {
       
       </div>
       <ProductList products={filteredProducts}/>
+      </div>
     </>
   )
 }
