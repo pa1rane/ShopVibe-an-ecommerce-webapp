@@ -6,6 +6,7 @@ import GridLoader from "react-spinners/GridLoader";
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import ProductDetails from './component/ProductDetails';
 import Navbar from './Navbar';
+import WishList from './component/navbar/WishList';
 
 const ShopContext = createContext();
 const App = () => {
@@ -29,12 +30,13 @@ const App = () => {
      setLoading(false)
     }
   }
+   
 
   return (
     <div className='flex flex-col'>
     <Router>
-    <Navbar/>
     <ShopContext.Provider value={[list, dispatch]}>
+    <Navbar/>
        {loading ? 
        <GridLoader
         color="black"
@@ -45,6 +47,7 @@ const App = () => {
       /> : (
         <Routes>
      <Route path="/" element={<Products/>}/>
+     <Route path='wishlist' element={<WishList/>}/>
      <Route path="/products/:id" element={<ProductDetails/>}/>
       </Routes>
       )

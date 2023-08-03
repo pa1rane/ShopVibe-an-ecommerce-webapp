@@ -3,6 +3,9 @@ const shopReducer =(list, action)=> {
         case 'render_list': {
             return action.message;
         }
+        case 'add_to_wishlist': {
+            return [...list,action.message]
+        }
     default: {
         return list;
     }

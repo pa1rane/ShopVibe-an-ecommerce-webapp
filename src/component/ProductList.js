@@ -1,8 +1,9 @@
-import React from 'react';
+import React,{useContext} from 'react';
 import { Link} from 'react-router-dom';
+import { ShopContext } from '../App';
 
 const ProductList = ({products}) => {
-
+ const [, dispatch] = useContext(ShopContext)
   return (
       <div className="flex flex-wrap h-screen w-screen overflow-x-hidden justify-center items-center">
           {products.map((li) => (
@@ -16,11 +17,13 @@ const ProductList = ({products}) => {
             <div className='flex justify-between mt-5'>
             <p>{li.price}$</p>
               <form className='flex flex-col'>
-                <input type="button" value="WISHLIST"/>
+                <input type="button" value="WISHLIST" className="hover:cursor-pointer"
+                  onClick={() => {
+                  dispatch({type: "add_to_wishlist", message: li})
+                }} />
                 <input type="button" value="ADD TO CART"/>
               </form>
             </div>
-       
        </div>
           ))}
          </div>
