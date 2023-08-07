@@ -1,33 +1,50 @@
-import React,{useContext} from 'react';
-import { Link} from 'react-router-dom';
+import React, { useContext } from 'react';
+import { Link } from 'react-router-dom';
 import { ShopContext } from '../App';
 
-const ProductList = ({products}) => {
- const [, dispatch] = useContext(ShopContext)
+const ProductList = ({ products }) => {
+  const [, dispatch] = useContext(ShopContext);
+
   return (
-      <div className="flex flex-wrap h-screen w-screen overflow-x-hidden justify-center items-center">
-          {products.map((li) => (
-              <div className='flex flex-col m-5 h-50 w-60' key={li.id}>
-            <Link className="hover:cursor-pointer" to={`/products/${li.id}`}>
-            <div  className="flex flex-col">
-            <img src={li.image} alt={li.title} className='w-full h-3/5 object-cover' />
-            <p>{li.title}</p>
-            </div>
-            </Link>
-            <div className='flex justify-between mt-5'>
-            <p>{li.price}$</p>
-              <form className='flex flex-col'>
-                <input type="button" value="WISHLIST" className="hover:cursor-pointer"
-                  onClick={() => {
-                  dispatch({type: "add_to_wishlist", message: li})
-                }} />
-                <input type="button" value="ADD TO CART"/>
-              </form>
-            </div>
-       </div>
-          ))}
-         </div>
-  )
-}
+    <div className="flex flex-wrap h-screen w-screen overflow-x-hidden justify-center items-center p-8">
+      {products.map((li) => (
+        <div
+          className="border border-[#e4e4e4] h-[400px] w-[250px] p-4 mb-8 flex flex-col items-center justify-between transition-transform duration-300 transform group"
+          key={li.id}
+        >
+          <Link
+            className="w-full h-[60%] flex justify-center items-center hover:opacity-75"
+            to={`/products/${li.id}`}
+          >
+            <img
+              src={li.image}
+              alt={li.title}
+              className="max-h-[160px] object-contain"
+            />
+          </Link>
+          <p className="text-base font-semibold mt-4">{li.title}</p>
+          <div className="flex justify-between mt-2">
+            <p className="text-lg font-bold mr-5">${li.price}</p>
+            <form className="flex flex-col">
+              <button
+                type="button"
+                className="btn-wishlist hover:opacity-75"
+                onClick={() => {
+                  dispatch({ type: 'add_to_wishlist', message: li });
+                }}
+              >
+                WISHLIST
+              </button>
+              <button type="button" className="btn-add-to-cart">
+                ADD TO CART
+              </button>
+            </form>
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+};
 
 export default ProductList;
+
