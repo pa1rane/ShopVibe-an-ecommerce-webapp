@@ -12,8 +12,11 @@ const ShopContext = createContext();
 const App = () => {
   const apiUrl = "https://fakestoreapi.com/products";
   const [loading, setLoading] = useState(true);
-  const productList = [];
-  const [list, dispatch] = useReducer(shopReducer, productList )
+  const initialState = {
+    list : [],
+    wishlist : []
+  };
+  const [state, dispatch] = useReducer(shopReducer, initialState)
 
   useEffect(() => {
       fetchApi()
@@ -30,12 +33,11 @@ const App = () => {
      setLoading(false)
     }
   }
-   
-
+  
   return (
     <div className='flex flex-col'>
     <Router>
-    <ShopContext.Provider value={[list, dispatch]}>
+    <ShopContext.Provider value={[state, dispatch]}>
     <Navbar/>
        {loading ? 
        <GridLoader

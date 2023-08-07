@@ -1,12 +1,16 @@
-import React, {useContext, useState} from 'react';
+import React, {useContext, useState, useEffect} from 'react';
 import { ShopContext } from '../App';
 import ProductList from './ProductList';
 
 const FilterSection = () => {
 
-  const [list] = useContext(ShopContext);
+  const [state] = useContext(ShopContext);
   const [input, setInput] = useState("");  
-  const [filteredProducts, setFilteredProducts] = useState(list)
+  const [filteredProducts, setFilteredProducts] = useState([]);
+
+  useEffect(() => {
+    setFilteredProducts(state.list)
+  }, [state.list])
 
   const handleChange = (e) => {
     setInput(e.target.value);
@@ -16,15 +20,15 @@ const FilterSection = () => {
   const handleCategoryChange =(category)=> {
     setInput("");
     if(category === 'All') {
-        setFilteredProducts(list);
+        setFilteredProducts(state.list);
     } else {
-        const filteredList = list.filter((li) => li.category === category);
+        const filteredList = state.list.filter((li) => li.category === category);
         setFilteredProducts(filteredList);
     }
 };
     
   const filterProducts = (value) => {
-    const filterList = list.filter((li) =>
+    const filterList = state.list.filter((li) =>
       li.title.toLowerCase().includes(value.toLowerCase())
     );
     setFilteredProducts(filterList);

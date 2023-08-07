@@ -1,19 +1,21 @@
-import React, {useContext} from 'react';
+import React, {useContext, useState} from 'react';
 import { ShopContext } from '../../App';
 
 const WishList = () => {
  
-  const [list,] = useContext(ShopContext)
-
+  const [state,] = useContext(ShopContext);
+  console.log(state.wishlist)
+  let addToWishlist = [];
+  addToWishlist = state.wishlist;
   return (
     <>
+       <h1>Wishlist</h1>
        <ul>
       {
-        list.map((li) => (
+        addToWishlist.map((li) => (
           <li key={li.id}>{li.title}</li>
         ))
       }
-      <li>pppp</li>
       </ul>
     </>
   )

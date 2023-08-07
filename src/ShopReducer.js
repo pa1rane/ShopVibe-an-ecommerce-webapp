@@ -1,13 +1,13 @@
-const shopReducer =(list, action)=> {
+const shopReducer =(state, action)=> {
     switch(action.type) {
         case 'render_list': {
-            return action.message;
+            return {...state, list :[...state.list, ...action.message]};
         }
         case 'add_to_wishlist': {
-            return [...list,action.message]
+            return {...state, wishlist:[...state.wishlist,action.message]}
         }
     default: {
-        return list;
+        return state;
     }
 }
 }

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import GridLoader from "react-spinners/GridLoader";
 
@@ -41,7 +41,6 @@ const ProductDetails = () => {
 
   return (
     <>
-      <Link to="/"><button>Back</button></Link>
       <div>
         <img src={product.image} alt={product.title} />
         <h3>{product.title}</h3>
