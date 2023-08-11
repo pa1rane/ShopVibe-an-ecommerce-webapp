@@ -1,19 +1,13 @@
 import React, { useContext, useState} from 'react';
-import { ShopContext } from '../../App';
+import { ShopContext } from '../App';
+import CartSummery from './CartSummery';
 
 const Cart = () => {
 
 const [state , dispatch] = useContext(ShopContext);
-const [input, setInput] = useState(1);
 
 let cartItems = [];
 cartItems = state.cart;
-
-const handleQuantity = (e) => {
-  const inputVal = e.target.value;
-  if (inputVal >= 1 && inputVal <= 100)
-  setInput( e.target.value)
-}
 
   return (
     <>
@@ -52,21 +46,9 @@ const handleQuantity = (e) => {
             </div>
             </div>
             </div>
-            <div>
-                <input 
-                type="number" 
-                value={input} 
-                className='w-20 border border-black-500 '
-                onChange={handleQuantity}
-                 />
-                 <div>
-                 <p>Amount</p>
-                 <p>{item.price.toFixed(0) * input}</p>
-                 </div>
-            </div>
-            
             </div>
         ))}
+          <CartSummery/>
       </div>
     </>
   )

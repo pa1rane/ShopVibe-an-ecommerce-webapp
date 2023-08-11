@@ -6,8 +6,8 @@ import GridLoader from "react-spinners/GridLoader";
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import ProductDetails from './component/ProductDetails';
 import Navbar from './Navbar';
-import WishList from './component/navbar/WishList';
-import Cart from './component/navbar/Cart';
+import WishList from './component/WishList';
+import Cart from './component/Cart';
 
 const ShopContext = createContext();
 const App = () => {

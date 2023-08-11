@@ -1,5 +1,5 @@
 import React, {useContext, useState} from 'react';
-import { ShopContext } from '../../App';
+import { ShopContext } from '../App';
 
 const WishList = () => {
  
