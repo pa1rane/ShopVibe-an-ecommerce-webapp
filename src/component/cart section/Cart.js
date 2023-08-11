@@ -1,6 +1,8 @@
 import React, { useContext, useState} from 'react';
-import { ShopContext } from '../App';
+import { ShopContext } from '../../App';
+import ItemQuantity from './ItemQuantity';
 import CartSummery from './CartSummery';
+
 
 const Cart = () => {
 
@@ -12,10 +14,9 @@ cartItems = state.cart;
   return (
     <>
       <h1>Shopping Cart</h1>
-      <div className='flex flex-wrap flex-col justify-center items-center m-10'>
+      <div className='flex flex-wrap justify-center items-center m-10'>
         {cartItems.map((item) => (
             <div className='flex justify-between' key={item.id}>
-            <div>
             <div>
             <img src={item.image} alt={item.title}
             className="max-h-[160px] object-contain" />
@@ -45,7 +46,7 @@ cartItems = state.cart;
 
             </div>
             </div>
-            </div>
+            <ItemQuantity itemPrice={item.price}/>
             </div>
         ))}
           <CartSummery/>

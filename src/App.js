@@ -7,7 +7,7 @@ import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import ProductDetails from './component/ProductDetails';
 import Navbar from './Navbar';
 import WishList from './component/WishList';
-import Cart from './component/Cart';
+import Cart from './component/cart section/Cart';
 
 const ShopContext = createContext();
 const App = () => {
