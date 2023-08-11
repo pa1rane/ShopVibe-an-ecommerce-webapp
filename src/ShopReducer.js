@@ -6,6 +6,9 @@ const shopReducer =(state, action)=> {
         case 'add_to_wishlist': {
             return {...state, wishlist:[...state.wishlist,action.message]}
         }
+        case 'add_to_cart': {
+            return {...state, cart:[...state.cart, action.message]}
+        }
     default: {
         return state;
     }

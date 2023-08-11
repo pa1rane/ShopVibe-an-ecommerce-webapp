@@ -20,7 +20,7 @@ const Navbar = () => {
       <div className="right">
       <div className="flex items-center mr-10 gap-10">
       <Link to="/wishlist"><BsFillBookmarkHeartFill className={`hover:cursor-pointer w-6 h-5`}/></Link> 
-       <BsCartCheckFill className={`hover:cursor-pointer w-6 h-6`}/>
+      <Link to="/cart"><BsCartCheckFill className={`hover:cursor-pointer w-6 h-6`}/></Link> 
        <BiSolidUserCircle className={`hover:cursor-pointer w-6 h-6`}/>
       </div>
       </div>

@@ -4,7 +4,6 @@ import { ShopContext } from '../../App';
 const WishList = () => {
  
   const [state,] = useContext(ShopContext);
-  console.log(state.wishlist)
   let addToWishlist = [];
   addToWishlist = state.wishlist;
   return (

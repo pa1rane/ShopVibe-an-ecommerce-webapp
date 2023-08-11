@@ -25,7 +25,7 @@ const ProductList = ({ products }) => {
           <p className="text-base font-semibold mt-4">{li.title}</p>
           <div className="flex justify-between mt-2">
             <p className="text-lg font-bold mr-5">${li.price}</p>
-            <form className="flex flex-col">
+            <div className="flex flex-col">
               <button
                 type="button"
                 className="btn-wishlist hover:opacity-75"
@@ -35,10 +35,16 @@ const ProductList = ({ products }) => {
               >
                 WISHLIST
               </button>
-              <button type="button" className="btn-add-to-cart">
+              <button
+               type="button" 
+               className="btn-add-to-cart hover:opacity-75"
+               onClick={() => {
+                dispatch({type:"add_to_cart", message: li});
+               }}
+               >
                 ADD TO CART
               </button>
-            </form>
+            </div>
           </div>
         </div>
       ))}
