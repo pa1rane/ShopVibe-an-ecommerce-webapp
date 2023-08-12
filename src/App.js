@@ -7,7 +7,6 @@ import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import ProductDetails from './component/ProductDetails';
 import Navbar from './Navbar';
 import WishList from './component/WishList';
-import Cart from './component/cart section/Cart';
 
 const ShopContext = createContext();
 const App = () => {
@@ -15,7 +14,7 @@ const App = () => {
   const [loading, setLoading] = useState(true);
   const initialState = {
     list : [],
-    wishlist : [],
+    wishlist : [], 
     cart : []
   };
   const [state, dispatch] = useReducer(shopReducer, initialState)
@@ -52,7 +51,6 @@ const App = () => {
         <Routes>
      <Route path="/" element={<Products/>}/>
      <Route path='wishlist' element={<WishList/>}/>
-     <Route path='cart' element={<Cart/>}/>
      <Route path="/products/:id" element={<ProductDetails/>}/>
       </Routes>
       )
