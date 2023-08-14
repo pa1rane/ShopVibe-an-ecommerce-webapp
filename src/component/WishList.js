@@ -1,11 +1,11 @@
-import React, {useContext, useState} from 'react';
+import React, {useContext} from 'react';
 import { ShopContext } from '../App';
 
 const WishList = () => {
  
   const [state,] = useContext(ShopContext);
-  let addToWishlist = [];
-  addToWishlist = state.wishlist;
+  const addToWishlist = [ ...state.wishlist];
+
   return (
     <>
        <h1>Wishlist</h1>

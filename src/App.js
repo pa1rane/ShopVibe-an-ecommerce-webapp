@@ -7,6 +7,7 @@ import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import ProductDetails from './component/ProductDetails';
 import Navbar from './Navbar';
 import WishList from './component/WishList';
+import Cart from './component/cartSection/Cart';
 
 const ShopContext = createContext();
 const App = () => {
@@ -51,6 +52,7 @@ const App = () => {
         <Routes>
      <Route path="/" element={<Products/>}/>
      <Route path='wishlist' element={<WishList/>}/>
+     <Route path="cart" element={<Cart/>}/>
      <Route path="/products/:id" element={<ProductDetails/>}/>
       </Routes>
       )
