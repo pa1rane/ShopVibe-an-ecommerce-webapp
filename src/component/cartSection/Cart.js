@@ -1,11 +1,33 @@
-import React, { useContext } from 'react';
+import React, { useContext} from 'react';
 import { ShopContext } from '../../App';
 import CartQuantity from './CartQuantity';
 import CartSummery from './CartSummery';
 
 const Cart = () => {
-  const [state] = useContext(ShopContext);
+  const [state, dispatch] = useContext(ShopContext);
+
   let cartItems = [...state.cart];
+
+  const handleIncrement = (id) => {
+      const updateCartQuantity = cartItems.map((item) => {
+        if(item.product.id === id && item.quantity < 10) {
+            return {...item, quantity: item.quantity + 1};
+        }
+        return item
+      })
+
+      dispatch({type: "update_cart_quantity", message: updateCartQuantity})
+  }
+  const handleDecrement = (id) => {
+     const updateCartQuantity = cartItems.map((item) => {
+        if (item.product.id === id && item.quantity > 0) {
+            return {...item, quantity: item.quantity - 1};
+        }
+        return item
+     })
+     dispatch({type: "update_cart_quantity", message: updateCartQuantity})
+  }
+
 
   return (
     <div className="bg-gray-100 p-4 rounded shadow-md flex">
@@ -13,12 +35,12 @@ const Cart = () => {
         <h2 className="text-xl font-semibold mb-4">Shopping Cart</h2>
         <div className="grid gap-4">
           {cartItems.map((item) => (
-            <div key={item.id} className="flex items-center bg-white p-4 rounded shadow border">
+            <div key={item.product.id} className="flex items-center bg-white p-4 rounded shadow border">
               <div className="flex items-center flex-grow">
-                <img src={item.image} alt={item.title} className="w-20 h-20 object-contain mr-4" />
+                <img src={item.product.image} alt={item.product.title} className="w-20 h-20 object-contain mr-4" />
                 <div>
-                  <p className="text-base font-semibold mb-1">{item.title}</p>
-                  <p className="text-gray-600">${item.price}</p>
+                  <p className="text-base font-semibold mb-1">{item.product.title}</p>
+                  <p className="text-gray-600">${item.product.price}</p>
                   <div className="mt-2 space-x-2">
                     <button
                       type='button'
@@ -47,7 +69,12 @@ const Cart = () => {
                   </div>
                 </div>
               </div>
-              <CartQuantity />
+              <CartQuantity 
+              quantity={item.quantity} 
+              handleDecrement={handleDecrement}
+              handleIncrement={handleIncrement}
+              id = {item.product.id}
+              />
             </div>
           ))}
         </div>

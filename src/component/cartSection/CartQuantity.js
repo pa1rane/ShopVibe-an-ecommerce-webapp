@@ -1,6 +1,6 @@
 import React from "react";
 
-const CartQuantity = () => {
+const CartQuantity = ({quantity, handleDecrement, handleIncrement, id}) => {
   return (
     <>
       <div className="flex flex-col items-center space-y-2">
@@ -10,14 +10,16 @@ const CartQuantity = () => {
             type="button"
             className="px-2 py-1 text-sm 
                   bg-gray-300 rounded"
+                  onClick={() => handleDecrement(id)}
           >
             -
           </button>
-          <p className="text-lg font-semibold">1</p>
+          <p className="text-lg font-semibold">{quantity}</p>
           <button
             type="button"
             className="px-2 py-1 text-sm 
                   bg-gray-300 rounded"
+                  onClick={() => handleIncrement(id)}
           >
             +
           </button>
