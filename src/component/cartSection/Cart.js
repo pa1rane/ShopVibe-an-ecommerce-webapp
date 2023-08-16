@@ -20,7 +20,7 @@ const Cart = () => {
   }
   const handleDecrement = (id) => {
      const updateCartQuantity = cartItems.map((item) => {
-        if (item.product.id === id && item.quantity > 0) {
+        if (item.product.id === id && item.quantity > 1) {
             return {...item, quantity: item.quantity - 1};
         }
         return item
