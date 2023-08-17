@@ -1,7 +1,7 @@
 import React from 'react';
 import CartQuantity from './CartQuantity';
 
-const CartList = ({cartItems,handleDecrement, handleIncrement}) => {
+const CartList = ({cartItems,handleDecrement, handleIncrement, handleRemoveItem}) => {
   return (
     <div className="grid gap-4">
     {cartItems.map((item) => (
@@ -14,6 +14,7 @@ const CartList = ({cartItems,handleDecrement, handleIncrement}) => {
             <div className="mt-2 space-x-2">
               <button
                 type='button'
+                onClick={() => handleRemoveItem(item.product.id)}
                 className="px-2 py-1 text-sm
                  text-white
                  bg-red-500 rounded 

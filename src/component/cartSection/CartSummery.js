@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 const CartSummery = () => {
   return (
@@ -18,7 +18,13 @@ const CartSummery = () => {
       </div>
       <button
         type='button'
-        className="w-full py-2 bg-blue-500 text-white rounded hover:bg-blue-600 focus:outline-none focus:ring focus:ring-blue-300"
+        className="w-full py-2 
+        bg-blue-500 
+        text-white rounded 
+        hover:bg-blue-600 
+        focus:outline-none 
+        focus:ring 
+        focus:ring-blue-300"
       >
         Checkout
       </button>
@@ -26,4 +32,4 @@ const CartSummery = () => {
   )
 }
 
-export default CartSummery
+export default CartSummery;

@@ -1,6 +1,6 @@
-import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
-import { ShopContext } from '../App';
+import React, { useContext } from "react";
+import { Link } from "react-router-dom";
+import { ShopContext } from "../App";
 
 const ProductList = ({ products }) => {
   const [, dispatch] = useContext(ShopContext);
@@ -30,18 +30,18 @@ const ProductList = ({ products }) => {
                 type="button"
                 className="btn-wishlist hover:opacity-75"
                 onClick={() => {
-                  dispatch({ type: 'add_to_wishlist', message: li });
+                  dispatch({ type: "add_to_wishlist", message: li });
                 }}
               >
                 WISHLIST
               </button>
               <button
-               type="button" 
-               className="btn-add-to-cart hover:opacity-75"
-               onClick={() => {
-                dispatch({type:"add_to_cart", message: li});
-               }}
-               >
+                type="button"
+                className="btn-add-to-cart hover:opacity-75"
+                onClick={() => {
+                  dispatch({ type: "add_to_cart", message: li });
+                }}
+              >
                 ADD TO CART
               </button>
             </div>
@@ -53,4 +53,3 @@ const ProductList = ({ products }) => {
 };
 
 export default ProductList;
-
