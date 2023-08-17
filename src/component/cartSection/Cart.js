@@ -35,6 +35,10 @@ const Cart = () => {
     })
     dispatch({type:"update_cart", message:itemRemoved })
   }
+ 
+  const subTotalOfCartItems = cartItems.reduce((total, item) => {
+    return total + item.product.price * item.quantity
+  }, 0)
 
   return (
     <div className="bg-gray-100 p-4 rounded shadow-md flex">
@@ -48,7 +52,7 @@ const Cart = () => {
         />
       </div>
       <div className="w-1/3 ml-4 mt-11 sticky">
-        <CartSummery />
+        <CartSummery subTotal={subTotalOfCartItems}/>
       </div>
     </div>
   );
