@@ -16,7 +16,7 @@ const Cart = () => {
       return item;
     });
 
-    dispatch({ type: "update_cart_quantity", message: updateCartQuantity });
+    dispatch({ type: "update_cart_item_quantity", message: updateCartQuantity });
   };
 
   const handleDecrement = (id) => {
