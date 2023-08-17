@@ -6,7 +6,8 @@ const CartSummery = ({subTotal}) => {
     const total = shippingCharge !== "Free" ? shippingCharge + subTotal: subTotal;
   return (
     <div className="bg-white p-4 rounded shadow-md sticky">
-      <p className="text-lg font-semibold mb-4">Cart Summary</p>
+      <p className="text-lg font-semibold mb-1">Cart Summary</p>
+      <p className='text-red-600 font-bold mb-4'>{subTotal < 500 ? "(Shop For 500 or More To Get FREE Delivery)" : ""}</p>
       <div className="mb-4">
         <p className="text-gray-600">Subtotal</p>
         <p>${+(subTotal.toFixed(2))}</p>
