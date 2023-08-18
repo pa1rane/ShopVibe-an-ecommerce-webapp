@@ -14,6 +14,10 @@ const shopReducer = (state, action) => {
       return { ...state, wishlist: [...state.wishlist, action.message] };
     }
 
+    case "update_wishlist" : {
+       return {...state, wishlist: action.message}
+    }
+
     case "add_to_cart": {
       const productExistsInCart = state.cart.find(
         (item) => item.product.id === action.message.id

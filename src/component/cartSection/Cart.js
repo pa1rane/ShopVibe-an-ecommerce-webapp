@@ -41,7 +41,6 @@ const Cart = () => {
     if (itemToMove) {
       dispatch({ type: "move_to_wishlist", message: itemToMove });
     }
-    console.log(itemToMove)
   };
   
   const subTotalOfCartItems = cartItems.reduce((total, item) => {
