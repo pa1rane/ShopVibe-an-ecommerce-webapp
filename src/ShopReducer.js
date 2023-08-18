@@ -30,7 +30,7 @@ const shopReducer = (state, action) => {
     case "update_cart" : {
         return {...state, cart: action.message};
     }
-    
+
     case "update_cart_item_quantity": {
       const updatedCart = state.cart.map((item) => {
         const updatedCartItem = action.message.find(
@@ -44,10 +44,22 @@ const shopReducer = (state, action) => {
       return { ...state, cart: updatedCart };
     }
 
+    case "move_to_wishlist" : {
+        const itemRemove = state.cart.filter((item) => {
+            return item.product.id !== action.message.product.id
+        })
+        const addIntoWishlist = state.cart.find((item) => {
+            return item.product.id === action.message.product.id
+        })
+
+        const updatedWishlist = [...state.wishlist, {...addIntoWishlist.product}]
+        return {...state, cart: itemRemove, wishlist: updatedWishlist}
+    }
+
     default: {
       return state;
     }
-  }
+  }   
 };
 
 export default shopReducer;

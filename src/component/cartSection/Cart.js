@@ -35,7 +35,15 @@ const Cart = () => {
     })
     dispatch({type:"update_cart", message:itemRemoved })
   }
- 
+
+  const handleMoveToWishlist = (id) => {
+    const itemToMove = cartItems.find((item) => item.product.id === id);
+    if (itemToMove) {
+      dispatch({ type: "move_to_wishlist", message: itemToMove });
+    }
+    console.log(itemToMove)
+  };
+  
   const subTotalOfCartItems = cartItems.reduce((total, item) => {
     return total + item.product.price * item.quantity
   }, 0)
@@ -49,6 +57,7 @@ const Cart = () => {
           handleDecrement={handleDecrement}
           handleIncrement={handleIncrement}
           handleRemoveItem={handleRemoveItem}
+          handleMoveToWishlist={handleMoveToWishlist}
         />
       </div>
       <div className="w-1/3 ml-4 mt-11 sticky">

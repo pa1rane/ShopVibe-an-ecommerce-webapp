@@ -2,7 +2,7 @@ import React from 'react';
 
 const CartSummery = ({subTotal}) => {
 
-    const shippingCharge = subTotal > 500 ? "Free" : 10;
+    const shippingCharge = subTotal > 500 ? "Free" : subTotal <= 0 ? 0 : 10;
     const total = shippingCharge !== "Free" ? shippingCharge + subTotal: subTotal;
   return (
     <div className="bg-white p-4 rounded shadow-md sticky">
