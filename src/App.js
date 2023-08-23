@@ -5,7 +5,7 @@ import Products from "./Products";
 import GridLoader from "react-spinners/GridLoader";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import ProductDetails from "./component/ProductDetails";
-import Navbar from "./Navbar";
+import Navbar from "./component/navSection/Navbar";
 import WishList from "./component/WishList";
 import Cart from "./component/cartSection/Cart";
 

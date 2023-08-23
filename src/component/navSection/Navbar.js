@@ -1,8 +1,8 @@
 import React from 'react';
 import {BsFillBookmarkHeartFill} from 'react-icons/bs';
 import {BsCartCheckFill} from 'react-icons/bs';
-import {BiSolidUserCircle} from 'react-icons/bi';
 import { Link } from 'react-router-dom';
+import LandingPage from './LandingPage';
 
 const Navbar = () => {
   return (
@@ -21,7 +21,7 @@ const Navbar = () => {
       <div className="flex items-center mr-10 gap-10">
       <Link to="/wishlist"><BsFillBookmarkHeartFill className={`hover:cursor-pointer w-6 h-5`}/></Link> 
      <Link to="/cart"><BsCartCheckFill className={`hover:cursor-pointer w-6 h-6`}/></Link>
-       <BiSolidUserCircle className={`hover:cursor-pointer w-6 h-6`}/>
+           <LandingPage className={`hover:cursor-pointer w-6 h-6`}/>
       </div>
       </div>
       </div>
