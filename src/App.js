@@ -8,7 +8,7 @@ import ProductDetails from "./component/ProductDetails";
 import Navbar from "./component/navSection/Navbar";
 import WishList from "./component/WishList";
 import Cart from "./component/cartSection/Cart";
-import Homepage from "./component/Homepage";
+import Homepage from "./component/homepage/Homepage";
 
 const ShopContext = createContext();
 const App = () => {
