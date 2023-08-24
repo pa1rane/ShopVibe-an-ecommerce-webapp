@@ -3,7 +3,7 @@ import { useAuth0 } from '@auth0/auth0-react';
 import Login from './Login';
 import Logout from './Logout';
 
-const LandingPage = () => {
+const UserProfile = () => {
 
  const {isAuthenticated} = useAuth0();
      if (isAuthenticated) {
@@ -12,4 +12,4 @@ const LandingPage = () => {
      return <Login/>
 }
 
-export default LandingPage
+export default UserProfile;

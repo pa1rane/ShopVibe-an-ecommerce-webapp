@@ -8,6 +8,7 @@ import ProductDetails from "./component/ProductDetails";
 import Navbar from "./component/navSection/Navbar";
 import WishList from "./component/WishList";
 import Cart from "./component/cartSection/Cart";
+import Homepage from "./component/Homepage";
 
 const ShopContext = createContext();
 const App = () => {
@@ -50,7 +51,8 @@ const App = () => {
             />
           ) : (
             <Routes>
-              <Route path="/" element={<Products />} />
+              <Route path="/" element={<Homepage />}/>
+              <Route path="products" element={<Products />} />
               <Route path="wishlist" element={<WishList />} />
               <Route path="cart" element={<Cart />} />
               <Route path="/products/:id" element={<ProductDetails />} />
