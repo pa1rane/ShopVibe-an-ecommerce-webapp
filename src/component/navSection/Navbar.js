@@ -6,7 +6,6 @@ import UserProfile from './UserProfile';
 
 const Navbar = () => {
   return (
-    <>
     <div className='w-full  h-10 flex items-center justify-between' >
       <div className="flex gap-20">
       <h3 className='ml-10 hover:cursor-pointer'>ShopVibe</h3>
@@ -15,7 +14,7 @@ const Navbar = () => {
        <li className='hover:cursor-pointer'>About</li>
      <Link to="/products"><li className='hover:cursor-pointer'>Products</li></Link>  
       </ul>
-      </div>
+      </div>  
 
       <div className="right">
       <div className="flex items-center mr-10 gap-10">
@@ -25,7 +24,6 @@ const Navbar = () => {
       </div>   
       </div>
       </div>
-    </>
   )
 }
 export default Navbar;
