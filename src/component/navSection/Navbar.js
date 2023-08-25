@@ -6,7 +6,7 @@ import UserProfile from './UserProfile';
 
 const Navbar = () => {
   return (
-    <div className='w-full  h-10 flex items-center justify-between' >
+    <div className='w-full  h-10 flex items-center justify-between bg-[#EADBC8] py-8' >
       <div className="flex gap-20">
       <h3 className='ml-10 hover:cursor-pointer'>ShopVibe</h3>
       <ul className='flex gap-10'>
