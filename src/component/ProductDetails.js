@@ -1,9 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import GridLoader from "react-spinners/GridLoader";
+import { ShopContext } from "../App";
 
 const ProductDetails = () => {
+  const [,dispatch] = useContext(ShopContext);
   const { id } = useParams();
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -63,6 +65,9 @@ const ProductDetails = () => {
            hover:bg-blue-900 
            focus:outline-none 
            focus:ring focus:ring-blue-200"
+           onClick={() =>{
+             dispatch({type: "add_to_cart",  message: product})
+           }}
           >
             Add to Cart
           </button>
