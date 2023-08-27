@@ -42,6 +42,7 @@ const App = () => {
         <ShopContext.Provider value={[state, dispatch]}>
           <Navbar />
           {loading ? (
+            <div className="flex items-center justify-center h-screen">
             <GridLoader
               color="black"
               loading={loading}
@@ -49,6 +50,7 @@ const App = () => {
               aria-label="Loading Spinner"
               data-testid="loader"
             />
+            </div>
           ) : (
             <Routes>
               <Route path="/" element={<Homepage />}/>
