@@ -1,21 +1,41 @@
-import React, {useContext} from 'react';
+import React, { useContext, useState } from 'react';
 import { ShopContext } from '../../App';
-import {motion} from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 const ProductSlider = () => {
-
+  const [productView, setProductView] = useState(0);
   const [state,] = useContext(ShopContext);
   const sliderList = state.list.filter((li) => li.category === "women's clothing");
- 
+
+  const handlePrev = () => {
+    setProductView((prevProductView) => (prevProductView - 1 + sliderList.length) % sliderList.length);
+  };
+
+  const handleNext = () => {
+    setProductView((prevProductView) => (prevProductView + 1) % sliderList.length);
+  };
+
   return (
-    <div >
-     {sliderList.map((product) => (
-      <div key={product.id}>
-        <img src={product.image} alt={product.title}/>
-        </div>
-     ) )}
-     </div>
-  )
-}
+    <div className='my-8'>
+      <header className='text-center font-semibold text-2xl mb-4'>Women's Favorites</header>
+      <div className='flex justify-center items-center w-full'>
+        <button onClick={handlePrev} className='mr-4 text-gray-500 hover:text-gray-700 cursor-pointer'>
+          &lt; Prev
+        </button>
+        <Link
+        to={`/products/${sliderList[productView].id}`}>
+        <img
+          src={sliderList[productView].image}
+          alt={sliderList[productView].title}
+          className='w-[20rem] h-[25rem] hover:opacity-75'
+        />
+        </Link>
+        <button onClick={handleNext} className='ml-4 text-gray-500 hover:text-gray-700 cursor-pointer'>
+          Next &gt;
+        </button>
+      </div>
+    </div>
+  );
+};
 
 export default ProductSlider;
