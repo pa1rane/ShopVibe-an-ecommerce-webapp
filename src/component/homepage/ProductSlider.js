@@ -17,9 +17,9 @@ const ProductSlider = () => {
 
   return (
     <div className='my-8'>
-      <header className='text-center font-semibold text-2xl mb-4'>Women's Favorites</header>
+      <header className='text-center font-semibold text-2xl mb-4 text-[#4E148C]'>Women's Favorites</header>
       <div className='flex justify-center items-center w-full'>
-        <button onClick={handlePrev} className='mr-4 text-gray-500 hover:text-gray-700 cursor-pointer'>
+        <button onClick={handlePrev} className='mr-4 text-[#c49def] hover:text-[#4E148C] cursor-pointer'>
           &lt; Prev
         </button>
         <Link
@@ -30,7 +30,7 @@ const ProductSlider = () => {
           className='w-[20rem] h-[25rem] hover:opacity-75'
         />
         </Link>
-        <button onClick={handleNext} className='ml-4 text-gray-500 hover:text-gray-700 cursor-pointer'>
+        <button onClick={handleNext} className='ml-4 text-[#c49def] hover:text-[#4E148C] cursor-pointer'>
           Next &gt;
         </button>
       </div>
