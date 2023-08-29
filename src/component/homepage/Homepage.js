@@ -1,6 +1,7 @@
 import React from 'react';
 import Hero from './Hero';
 import ProductSlider from './ProductSlider';
+import Testimonial from './Testimonial';
 
 const Homepage = () => {
   
@@ -8,6 +9,7 @@ const Homepage = () => {
     <>
       <Hero/>
       <ProductSlider/>
+      <Testimonial/>
     </>
   )
 }
