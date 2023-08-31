@@ -4,7 +4,7 @@ import {Link } from 'react-router-dom';
 
 const Hero = () => {
   return (
-    <div className='flex w-full overflow-hidden justify-center bg-[#4E148C]'>
+    <div className='flex w-full min-h-[90vh] overflow-hidden justify-center bg-[#4E148C]'>
         <div className='flex flex-col gap-5 items-center justify-center' >
          <header className='font-mono font-bold text-7xl text-center text-[#ffff]'>CLOTHES MAKE THE MAN</header>
          <p className='font-semibold font-sans text-md text-[#ffff]'>Choose the dress style that best suits you with our diverse clothing collection</p>
