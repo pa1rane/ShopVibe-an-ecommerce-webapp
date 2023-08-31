@@ -9,7 +9,8 @@ const Hero = () => {
          <header className='font-mono font-bold text-7xl text-center text-[#ffff]'>CLOTHES MAKE THE MAN</header>
          <p className='font-semibold font-sans text-md text-[#ffff]'>Choose the dress style that best suits you with our diverse clothing collection</p>
          <div>
-        <Link to="/products"> <button className='bg-[#ffff] font-bold py-2 px-4 rounded-full font-mono text-[#4E148C]'>
+        <Link to="/products"> 
+        <button className='bg-[#ffff] font-bold py-2 px-4 rounded-full font-mono text-[#4E148C] hover:bg-[#fca71e] transition-colors'>
             Shop Now
           </button>
           </Link>

@@ -1,5 +1,6 @@
 import React from 'react';
 import {MdEmail} from 'react-icons/md';
+import {MdCall} from 'react-icons/md';
 
 const Footer = () => {
   return (
@@ -21,11 +22,14 @@ const Footer = () => {
         <p className='cursor-pointer font-serif hover:underline'>Refund Policy</p>
       </div>
       <div className='companyInfo'>
-       <h3 className='font-bold mb-2'>CUSTOMER SERVICE</h3>
-        <p className='cursor-pointer font-serif hover:underline'>Contact Us</p>
+       <h3 className='font-bold mb-2'>CONTACT US</h3>
         <p className='cursor-pointer font-serif hover:underline flex items-center relative'>
         <MdEmail className = "absolute left-[-30px] w-5 h-5" />
         <span>support@shopvibe.in</span>
+        </p>
+        <p className='cursor-pointer font-serif hover:underline flex items-center relative'>
+        <MdCall className = "absolute left-[-30px] w-5 h-5" />
+        <span>98765432100</span>
         </p>
       </div>
       </div>
