@@ -1,4 +1,5 @@
 import React from 'react';
+import {MdEmail} from 'react-icons/md';
 
 const Footer = () => {
   return (
@@ -22,7 +23,10 @@ const Footer = () => {
       <div className='companyInfo'>
        <h3 className='font-bold mb-2'>CUSTOMER SERVICE</h3>
         <p className='cursor-pointer font-serif hover:underline'>Contact Us</p>
-        <p className='cursor-pointer font-serif hover:underline'>support@shopvibe.in</p>
+        <p className='cursor-pointer font-serif hover:underline flex items-center relative'>
+        <MdEmail className = "absolute left-[-30px] w-5 h-5" />
+        <span>support@shopvibe.in</span>
+        </p>
       </div>
       </div>
       <footer className='flex justify-center items-center bg-[#4E148C] p-4 text-[#ffff]' >
