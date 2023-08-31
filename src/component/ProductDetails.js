@@ -31,7 +31,7 @@ const ProductDetails = () => {
     return (
       <div className="flex items-center justify-center h-screen">
         <GridLoader
-          color="black"
+          color="#4E148C"
           loading={loading}
           size={150}
           aria-label="Loading Spinner"
@@ -42,7 +42,7 @@ const ProductDetails = () => {
   }
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-[#EADBC8]">
+    <div className="flex items-center justify-center min-h-[90vh] bg-[#4E148C]">
       <div className="max-w-screen-xl mx-auto px-4 py-8 gap-60 bg-white border rounded-lg shadow-md md:flex">
         <div>
           <img
@@ -60,11 +60,10 @@ const ProductDetails = () => {
             {product.description}
           </p>
           <button
-            className="bg-blue-500 
+            className="bg-[#4E148C] 
           text-white px-4 py-2 rounded-lg
-           hover:bg-blue-900 
-           focus:outline-none 
-           focus:ring focus:ring-blue-200"
+           hover:bg-[#7f50b1]
+           focus:outline-none"
            onClick={() =>{
              dispatch({type: "add_to_cart",  message: product})
            }}

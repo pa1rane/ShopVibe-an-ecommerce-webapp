@@ -44,7 +44,7 @@ const App = () => {
           {loading ? (
             <div className="flex items-center justify-center h-screen">
             <GridLoader
-              color="black"
+              color="#4E148C"
               loading={loading}
               size={150}
               aria-label="Loading Spinner"
