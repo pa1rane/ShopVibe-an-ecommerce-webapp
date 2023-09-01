@@ -41,30 +41,31 @@ const FilterSection = () => {
   };
 
   return (
-    <div className="flex">
-      <div className="flex flex-col p-4 mt-6 space-y-6 bg-white shadow-md rounded-md">
+    <div className="flex bg-[#9466c6] ">
+      <div className="flex flex-col p-4 space-y-6 shadow-md rounded-md
+       sticky top-[10%] z-10 w-[250px] h-[500px] text-[#ffff]">
         <input
           type="text"
           placeholder="Search"
           value={searchInput}
           onChange={handleChange}
-          className="p-2 border rounded-md focus:outline-none focus:ring focus:border-blue-300"
+          className="p-2 border rounded-md focus:outline-none text-black font-semibold"
         />
         <div>
           <h3 className="font-semibold">Category</h3>
-          <p onClick={() => handleCategoryChange('All')} className="category-link">
+          <p onClick={() => handleCategoryChange('All')} className="category-link cursor-pointer">
             All
           </p>
-          <p onClick={() => handleCategoryChange("men's clothing")} className="category-link">
+          <p onClick={() => handleCategoryChange("men's clothing")} className="category-link cursor-pointer">
             Mens
           </p>
-          <p onClick={() => handleCategoryChange("women's clothing")} className="category-link">
+          <p onClick={() => handleCategoryChange("women's clothing")} className="category-link cursor-pointer">
             Womens
           </p>
-          <p onClick={() => handleCategoryChange('jewelery')} className="category-link">
+          <p onClick={() => handleCategoryChange('jewelery')} className="category-link cursor-pointer">
             Jewellery
           </p>
-          <p onClick={() => handleCategoryChange('electronics')} className="category-link">
+          <p onClick={() => handleCategoryChange('electronics')} className="category-link cursor-pointer">
             Electronics
           </p>
         </div>
@@ -76,7 +77,8 @@ const FilterSection = () => {
             max="1000"
             value={sliderValue}
             onChange={handlePriceRange}
-            className="slider appearance-none w-full h-2 bg-gray-300 rounded-md focus:outline-none focus:ring focus:border-blue-300"
+            className="slider appearance-none w-full h-2 bg-gray-300
+             rounded-md focus:outline-none cursor-grab"
           />
           <div className="flex justify-between">
             <span>$10</span>

@@ -6,10 +6,14 @@ const ProductList = ({ products }) => {
   const [, dispatch] = useContext(ShopContext);
 
   return (
-    <div className="flex flex-wrap h-screen w-screen overflow-x-hidden justify-center items-center p-8">
+    <div className="flex flex-wrap h-screen w-screen
+     overflow-x-hidden justify-center items-center p-8">
       {products.map((li) => (
         <div
-          className="border border-[#e4e4e4] h-[400px] w-[250px] p-4 mb-8 flex flex-col items-center justify-between transition-transform duration-300 transform group"
+          className="border-2 border-black h-[400px] w-[250px]
+           p-4 m-4 flex flex-col items-center justify-between 
+           transition-transform duration-300 transform group
+           bg-[#ffff] shadow-md rounded-md"
           key={li.id}
         >
           <Link
@@ -25,10 +29,10 @@ const ProductList = ({ products }) => {
           <p className="text-base font-semibold mt-4">{li.title}</p>
           <div className="flex justify-between mt-2">
             <p className="text-lg font-bold mr-5">${li.price}</p>
-            <div className="flex flex-col">
+            <div className="flex flex-col gap-2">
               <button
                 type="button"
-                className="btn-wishlist hover:opacity-75"
+                className="hover:opacity-75 rounded-md bg-[#ea54a2] text-[#ffff] text-sm font-semibold p-1"
                 onClick={() => {
                   dispatch({ type: "add_to_wishlist", message: li });
                 }}
@@ -37,7 +41,7 @@ const ProductList = ({ products }) => {
               </button>
               <button
                 type="button"
-                className="btn-add-to-cart hover:opacity-75"
+                className="hover:opacity-75 rounded-md bg-[#21d0eb] text-[#ffff] text-sm font-semibold p-1.5"
                 onClick={() => {
                   dispatch({ type: "add_to_cart", message: li });
                 }}
