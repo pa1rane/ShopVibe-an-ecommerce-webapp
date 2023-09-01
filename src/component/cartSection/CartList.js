@@ -18,11 +18,11 @@ const CartList = ({cartItems,handleDecrement, handleIncrement, handleRemoveItem,
                 onClick={() => handleRemoveItem(item.product.id)}
                 className="px-2 py-1 text-sm
                  text-white
-                 bg-red-500 rounded 
-                 hover:bg-red-600 
-                 focus:outline-none 
-                 focus:ring 
-                 focus:ring-red-300"
+                 bg-[#ea54a2]
+                 rounded-md 
+                 hover:opacity-75
+                 font-semibold
+                 focus:outline-none"
               >
                 Remove
               </button>
@@ -31,11 +31,11 @@ const CartList = ({cartItems,handleDecrement, handleIncrement, handleRemoveItem,
                 onClick={() => handleMoveToWishlist(item.product.id)}
                 className="px-2 py-1 text-sm 
                 text-white 
-                bg-blue-500 rounded 
-                hover:bg-blue-600 
-                focus:outline-none 
-                focus:ring 
-                focus:ring-blue-300"
+                bg-[#20a2b6] 
+                hover:opacity-75
+                rounded-md
+                font-semibold 
+                focus:outline-none"
               >
                 Move To Wishlist
               </button>

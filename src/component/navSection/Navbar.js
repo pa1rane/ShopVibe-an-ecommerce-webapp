@@ -11,11 +11,11 @@ const Navbar = () => {
       <h3 className='ml-10 font-bold font-mono hover:cursor-pointer text-[#ffff] text-2xl' >ShopVibe</h3>
       <ul className='flex gap-10 text-[#ffff] items-center'>
      <Link to="/">
-     <li className='hover:cursor-pointer hover:text-[#fca71e] font-semibold transition-colors'>Home</li>
+     <li className='hover:cursor-pointer hover:text-[#20a2b6] font-semibold transition-colors'>Home</li>
       </Link> 
-       <li className='hover:cursor-pointer hover:text-[#fca71e] font-semibold transition-colors'>About</li>
+       <li className='hover:cursor-pointer hover:text-[#20a2b6] font-semibold transition-colors'>About</li>
      <Link to="/products">
-      <li className='hover:cursor-pointer hover:text-[#fca71e] font-semibold transition-colors'>Products</li>
+      <li className='hover:cursor-pointer hover:text-[#20a2b6] font-semibold transition-colors'>Products</li>
       </Link>  
       </ul>
       </div>  
@@ -23,10 +23,10 @@ const Navbar = () => {
       <div className="right">
       <div className="flex items-center mr-10 gap-10">
       <Link to="/wishlist">
-        <BsFillBookmarkHeartFill className={`hover:cursor-pointer hover:text-[#fca71e] font-semibold transition-colors w-6 h-5 text-[#ffff]`}/>
+        <BsFillBookmarkHeartFill className={`hover:cursor-pointer hover:text-[#20a2b6] font-semibold transition-colors w-6 h-5 text-[#ffff]`}/>
         </Link> 
      <Link to="/cart">
-      <BsCartCheckFill className={`hover:cursor-pointer hover:text-[#fca71e] font-semibold transition-colors w-6 h-6 text-[#ffff]`}/>
+      <BsCartCheckFill className={`hover:cursor-pointer hover:text-[#20a2b6] font-semibold transition-colors w-6 h-6 text-[#ffff]`}/>
       </Link>
       <UserProfile className="hover:cursor-pointer w-6 h-6 text-[#ffff]"/>
       </div>   

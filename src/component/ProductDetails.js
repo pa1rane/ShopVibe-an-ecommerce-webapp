@@ -42,7 +42,7 @@ const ProductDetails = () => {
   }
 
   return (
-    <div className="flex items-center justify-center min-h-[90vh] bg-[#4E148C]">
+    <div className="flex items-center justify-center min-h-[90vh] bg-[#9466c6]">
       <div className="max-w-screen-xl mx-auto px-4 py-8 gap-60 bg-white border rounded-lg shadow-md md:flex">
         <div>
           <img
@@ -60,9 +60,9 @@ const ProductDetails = () => {
             {product.description}
           </p>
           <button
-            className="bg-[#4E148C] 
+            className="bg-[#ea54a2] 
           text-white px-4 py-2 rounded-lg
-           hover:bg-[#7f50b1]
+           hover:opacity-75
            focus:outline-none"
            onClick={() =>{
              dispatch({type: "add_to_cart",  message: product})

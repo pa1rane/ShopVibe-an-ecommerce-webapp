@@ -48,9 +48,9 @@ const Cart = () => {
   }, 0)
 
   return (
-    <div className="bg-gray-100 p-4 rounded shadow-md flex">
+    <div className="bg-[#9466c6] p-4 rounded shadow-md flex">
       <div className="flex-grow pr-4">
-        <h2 className="text-xl font-semibold mb-4">Shopping Cart</h2>
+        <h2 className="text-2xl font-semibold font-mono mb-4 text-[#ffff]">Shopping Cart</h2>
         <CartList
           cartItems={cartItems}
           handleDecrement={handleDecrement}
@@ -59,7 +59,7 @@ const Cart = () => {
           handleMoveToWishlist={handleMoveToWishlist}
         />
       </div>
-      <div className="w-1/3 ml-4 mt-11 sticky">
+      <div className="w-1/3 ml-4 mt-12">
         <CartSummery subTotal={subTotalOfCartItems}/>
       </div>
     </div>

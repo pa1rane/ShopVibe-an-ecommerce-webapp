@@ -9,7 +9,7 @@ const Logout = () => {
     <>
       <button
       onClick={() => logout()}
-      className='text-[#ffff] hover:text-[#fca71e] font-semibold transition-colors'>
+      className='text-[#ffff] hover:text-[#20a2b6] font-semibold transition-colors'>
         Log Out
       </button>
     </>

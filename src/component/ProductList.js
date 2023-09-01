@@ -41,7 +41,7 @@ const ProductList = ({ products }) => {
               </button>
               <button
                 type="button"
-                className="hover:opacity-75 rounded-md bg-[#21d0eb] text-[#ffff] text-sm font-semibold p-1.5"
+                className="hover:opacity-75 rounded-md bg-[#20a2b6] text-[#ffff] text-sm font-semibold p-1.5"
                 onClick={() => {
                   dispatch({ type: "add_to_cart", message: li });
                 }}

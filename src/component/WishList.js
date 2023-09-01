@@ -30,10 +30,10 @@ const WishList = () => {
             <p className="text-gray-600">${wishlist.price}</p>
             <button 
             onClick={() => handleWishlistItem(wishlist.id)}
-            className="mt-2 px-16 py-2 
-            bg-[#4E148C]
-            text-white rounded 
-            hover:bg-[#9466c6]">
+            className="mt-2 px-6 py-2 
+            bg-[#ea54a2]
+            text-white rounded-md 
+            hover:opacity-75 font-semibold">
               Remove
             </button>
             </div>
