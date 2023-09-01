@@ -42,7 +42,7 @@ const FilterSection = () => {
 
   return (
     <div className="flex">
-      <div className="flex flex-col p-4 mt-6 space-y-4 bg-white shadow-md rounded-md">
+      <div className="flex flex-col p-4 mt-6 space-y-6 bg-white shadow-md rounded-md">
         <input
           type="text"
           placeholder="Search"

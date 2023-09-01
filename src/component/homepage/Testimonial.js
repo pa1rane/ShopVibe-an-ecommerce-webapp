@@ -26,7 +26,7 @@ const Testimonial = () => {
   const testimonials = [...data.testimonials];
 
   return (
-    <div className="bg-[#4e148c85] py-12">
+    <div className="bg-[#9466c6] py-12">
       <div className="max-w-4xl mx-auto">
         <Swiper
           spaceBetween={30}
