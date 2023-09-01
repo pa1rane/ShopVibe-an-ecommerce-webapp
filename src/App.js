@@ -40,7 +40,7 @@ const App = () => {
     <div className="flex flex-col">
       <Router>
         <ShopContext.Provider value={[state, dispatch]}>
-          <Navbar />
+          <Navbar/>
           {loading ? (
             <div className="flex items-center justify-center h-screen">
             <GridLoader
