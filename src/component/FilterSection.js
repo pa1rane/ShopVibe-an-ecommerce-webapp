@@ -52,25 +52,25 @@ const FilterSection = () => {
           className="p-2 border rounded-md focus:outline-none text-black font-semibold"
         />
         <div>
-          <h3 className="font-semibold">Category</h3>
-          <p onClick={() => handleCategoryChange('All')} className="category-link cursor-pointer">
+          <h3 className="font-semibold text-xl mb-2">Category</h3>
+          <p onClick={() => handleCategoryChange('All')} className="category-link cursor-pointer hover:text-black font-semibold font-serif">
             All
           </p>
-          <p onClick={() => handleCategoryChange("men's clothing")} className="category-link cursor-pointer">
+          <p onClick={() => handleCategoryChange("men's clothing")} className="category-link cursor-pointer hover:text-black font-semibold font-serif">
             Mens
           </p>
-          <p onClick={() => handleCategoryChange("women's clothing")} className="category-link cursor-pointer">
+          <p onClick={() => handleCategoryChange("women's clothing")} className="category-link cursor-pointer hover:text-black font-semibold font-serif">
             Womens
           </p>
-          <p onClick={() => handleCategoryChange('jewelery')} className="category-link cursor-pointer">
+          <p onClick={() => handleCategoryChange('jewelery')} className="category-link cursor-pointer hover:text-black font-semibold font-serif">
             Jewellery
           </p>
-          <p onClick={() => handleCategoryChange('electronics')} className="category-link cursor-pointer">
+          <p onClick={() => handleCategoryChange('electronics')} className="category-link cursor-pointer hover:text-black font-semibold font-serif">
             Electronics
           </p>
         </div>
         <div>
-          <h3 className="font-semibold">Filter By Price</h3>
+          <h3 className="font-semibold font-serif">Filter By Price</h3>
           <input
             type="range"
             min="10"
