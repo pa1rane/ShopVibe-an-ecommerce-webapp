@@ -47,6 +47,14 @@ const Cart = () => {
     return total + item.product.price * item.quantity
   }, 0)
 
+  if(cartItems.length === 0) {
+    return (
+      <div className="bg-[#9466c6] min-h-[90vh] flex justify-center items-center"> 
+        <p className='text-4xl font-semibold text-[#ffff] font-mono'>Cart Is Empty</p>
+      </div>
+    )
+  }
+
   return (
     <div className="bg-[#9466c6] p-4 rounded shadow-md flex">
       <div className="flex-grow pr-4">
