@@ -3,6 +3,7 @@ import Hero from './Hero';
 import ProductSlider from './ProductSlider';
 import Testimonial from './Testimonial';
 import Footer from './Footer';
+import AboutUs from './AboutUs';
 
 const Homepage = () => {
   
@@ -11,6 +12,7 @@ const Homepage = () => {
       <Hero/>
       <ProductSlider/>
       <Testimonial/>
+      <AboutUs/>
       <Footer/>
     </>
   )
