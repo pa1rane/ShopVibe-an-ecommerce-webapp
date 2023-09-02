@@ -1,9 +1,32 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { ShopContext } from "../App";
+import {ToastContainer, toast} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const ProductList = ({ products }) => {
   const [, dispatch] = useContext(ShopContext);
+ 
+  const showCartToast = () => {
+    toast.success("Item Successfully Added To The Cart", {
+      position: toast.POSITION.TOP_CENTER,
+      style: {
+        backgroundColor:"#20a2b6",
+        color:"#ffff",
+        borderRadius:"10px",
+      }
+    })
+  }
+  const showWishlistToast = () => {
+    toast.success("Item Successfully Added To The Wishlist", {
+      position: toast.POSITION.TOP_CENTER,
+      style: {
+        backgroundColor:"#ea54a2",
+        color:"#ffff",
+        borderRadius:"10px",
+      }
+    })
+  }
 
   return (
     <div className="flex flex-wrap h-screen w-screen
@@ -34,6 +57,7 @@ const ProductList = ({ products }) => {
                 type="button"
                 className="hover:opacity-75 rounded-md bg-[#ea54a2] text-[#ffff] text-sm font-semibold p-1"
                 onClick={() => {
+                  showWishlistToast();
                   dispatch({ type: "add_to_wishlist", message: li });
                 }}
               >
@@ -42,8 +66,9 @@ const ProductList = ({ products }) => {
               <button
                 type="button"
                 className="hover:opacity-75 rounded-md bg-[#20a2b6] text-[#ffff] text-sm font-semibold p-1.5"
-                onClick={() => {
-                  dispatch({ type: "add_to_cart", message: li });
+                onClick={() => { 
+                  showCartToast();
+                  dispatch({ type: "add_to_cart", message: li })
                 }}
               >
                 ADD TO CART
@@ -52,6 +77,9 @@ const ProductList = ({ products }) => {
           </div>
         </div>
       ))}
+      <ToastContainer
+      autoClose={2000}
+      theme="colored"/>
     </div>
   );
 };
