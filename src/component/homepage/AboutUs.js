@@ -37,7 +37,7 @@ const AboutUs = () => {
         <img
           src={VisionImg}
           alt="Our Mission"
-          className=" w-[200px] h-[200px] "
+          className=" w-[250px] h-[225px] "
         />
       </div>
     </div>
