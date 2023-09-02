@@ -1,10 +1,16 @@
 import React from 'react';
 import CartQuantity from './CartQuantity';
+import {ToastContainer} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
-const CartList = ({cartItems,handleDecrement, handleIncrement, handleRemoveItem, handleMoveToWishlist}) => {
+const CartList = ({cartItems,handleDecrement, handleIncrement, handleRemoveItem, handleMoveToWishlist,showMovedToWishlistToast,showRemovedToast}) => {
 
   return (
     <div className="grid gap-4">
+      <ToastContainer
+      autoClose={2000}
+      theme='colored'
+      />
     {cartItems.map((item) => (
       <div key={item.product.id} className="flex items-center bg-white p-4 rounded shadow border">
         <div className="flex items-center flex-grow">
@@ -15,7 +21,9 @@ const CartList = ({cartItems,handleDecrement, handleIncrement, handleRemoveItem,
             <div className="mt-2 space-x-2">
               <button
                 type='button'
-                onClick={() => handleRemoveItem(item.product.id)}
+                onClick={() =>{
+                  showRemovedToast();
+                  handleRemoveItem(item.product.id)}}
                 className="px-2 py-1 text-sm
                  text-white
                  bg-[#ea54a2]
@@ -28,7 +36,9 @@ const CartList = ({cartItems,handleDecrement, handleIncrement, handleRemoveItem,
               </button>
               <button
                 type='button'
-                onClick={() => handleMoveToWishlist(item.product.id)}
+                onClick={() =>{
+                  showMovedToWishlistToast();
+                  handleMoveToWishlist(item.product.id)}}
                 className="px-2 py-1 text-sm 
                 text-white 
                 bg-[#20a2b6] 

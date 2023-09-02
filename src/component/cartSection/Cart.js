@@ -2,6 +2,8 @@ import React, { useContext } from "react";
 import { ShopContext } from "../../App";
 import CartSummery from "./CartSummery";
 import CartList from "./CartList";
+import {ToastContainer, toast} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Cart = () => {
   const [state, dispatch] = useContext(ShopContext);
@@ -47,9 +49,33 @@ const Cart = () => {
     return total + item.product.price * item.quantity
   }, 0)
 
+  const showRemovedToast = () => {
+    toast.success("Item Successfully Removed From The Cart", {
+      position: toast.POSITION.TOP_CENTER,
+      style: {
+        backgroundColor:"#ea54a2",
+        color:"#ffff",
+        borderRadius:"10px",
+      }
+    })
+  }
+  const showMovedToWishlistToast = () => {
+    toast.success("Item Successfully Moved To The Wishlist", {
+      position: toast.POSITION.TOP_CENTER,
+      style: {
+        backgroundColor:"#20a2b6",
+        color:"#ffff",
+        borderRadius:"10px",
+      }
+    })
+  }
+
   if(cartItems.length === 0) {
     return (
       <div className="bg-[#9466c6] min-h-[90vh] flex justify-center items-center"> 
+      <ToastContainer
+      autoClose={2000}
+      theme="colored"/>
         <p className='text-4xl font-semibold text-[#ffff] font-mono'>Cart Is Empty</p>
       </div>
     )
@@ -57,6 +83,9 @@ const Cart = () => {
 
   return (
     <div className="bg-[#9466c6] p-4 rounded shadow-md flex">
+      <ToastContainer
+      autoClose={2000}
+      theme="colored"/>
       <div className="flex-grow pr-4">
         <h2 className="text-2xl font-semibold font-mono mb-4 text-[#ffff]">Shopping Cart</h2>
         <CartList
@@ -65,6 +94,8 @@ const Cart = () => {
           handleIncrement={handleIncrement}
           handleRemoveItem={handleRemoveItem}
           handleMoveToWishlist={handleMoveToWishlist}
+          showMovedToWishlistToast={showMovedToWishlistToast}
+          showRemovedToast={showRemovedToast}
         />
       </div>
       <div className="w-1/3 ml-4 mt-12">
