@@ -3,7 +3,7 @@ import VisionImg from "../../assets/vision.png";
 
 const AboutUs = () => {
   return (
-    <div className="flex justify-between p-8 overflow-x-hidden">
+    <div className="flex justify-between px-8 py-12 overflow-x-hidden">
       <div>
         <header className="text-3xl font-mono font-semibold mb-4">
           <p>Our Mission</p>

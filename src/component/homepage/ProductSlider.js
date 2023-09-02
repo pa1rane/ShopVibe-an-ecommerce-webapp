@@ -16,7 +16,7 @@ const ProductSlider = () => {
   };
 
   return (
-    <div className='my-8'>
+    <div className='my-12'>
       <header className='text-center font-semibold font-mono text-2xl mb-4 text-[#4E148C]'>Women's Favorites</header>
       <div className='flex justify-center items-center w-full'>
         <button onClick={handlePrev} className='mr-4 text-[#9466c6] font-serif hover:text-[#4E148C] cursor-pointer'>
