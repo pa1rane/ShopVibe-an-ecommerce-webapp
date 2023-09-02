@@ -3,12 +3,26 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import GridLoader from "react-spinners/GridLoader";
 import { ShopContext } from "../App";
+import {ToastContainer, toast} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 const ProductDetails = () => {
   const [,dispatch] = useContext(ShopContext);
   const { id } = useParams();
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
+
+  const showAddedToCartToast = () => {
+    toast.success("Item Successfully Added Into The Cart", {
+      position: toast.POSITION.TOP_CENTER,
+      style: {
+        backgroundColor:"#ea54a2",
+        color:"#ffff",
+        borderRadius:"10px",
+      }
+    })
+  }
 
   useEffect(() => {
     const apiUrl = `https://fakestoreapi.com/products/${id}`;
@@ -43,6 +57,10 @@ const ProductDetails = () => {
 
   return (
     <div className="flex items-center justify-center min-h-[90vh] bg-[#9466c6]">
+      <ToastContainer
+      autoClose={2000}
+      theme="colored"
+      />
       <div className="max-w-screen-xl mx-auto px-4 py-8 gap-60 bg-white border rounded-lg shadow-md md:flex">
         <div>
           <img
@@ -62,9 +80,11 @@ const ProductDetails = () => {
           <button
             className="bg-[#ea54a2] 
           text-white px-4 py-2 rounded-lg
+          font-semibold
            hover:opacity-75
            focus:outline-none"
            onClick={() =>{
+             showAddedToCartToast();
              dispatch({type: "add_to_cart",  message: product})
            }}
           >
