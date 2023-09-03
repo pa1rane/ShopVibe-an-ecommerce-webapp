@@ -78,7 +78,7 @@ const FilterSection = () => {
             value={sliderValue}
             onChange={handlePriceRange}
             className="slider appearance-none w-full h-2 bg-gray-300
-             rounded-md focus:outline-none cursor-grab"
+             rounded-md focus:outline-none cursor-pointer"
           />
           <div className="flex justify-between">
             <span>$10</span>

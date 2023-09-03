@@ -13,12 +13,12 @@ const Navbar = () => {
      <Link to="/">
      <li className='hover:cursor-pointer hover:text-[#20a2b6] font-semibold transition-colors'>Home</li>
       </Link>
+      <Link to="/products">
+      <li className='hover:cursor-pointer hover:text-[#20a2b6] font-semibold transition-colors'>Products</li>
+      </Link>
       <Link to="/about">
        <li className='hover:cursor-pointer hover:text-[#20a2b6] font-semibold transition-colors'>About</li>
-       </Link> 
-     <Link to="/products">
-      <li className='hover:cursor-pointer hover:text-[#20a2b6] font-semibold transition-colors'>Products</li>
-      </Link>  
+       </Link>   
       </ul>
       </div>  
 
