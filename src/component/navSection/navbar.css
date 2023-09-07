@@ -1,0 +1,126 @@
+.navbar {
+    width: 100%;
+    min-height: 10vh;
+    display: flex;
+    background: red;
+    border: black;
+    color: #ffff;
+    padding: 0 2.5rem;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.logo{
+    display: flex;
+    align-items: center;
+    margin-right: 5vw;
+    font-size: medium;
+}
+
+ .menuOpen{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+ .menuClose{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.leftNavList{
+    display: flex;
+    align-items: center;
+    gap: 5vw;
+}
+
+.rightNavList{
+    display: flex;
+    align-items: center;
+    gap: 5vw;
+}
+
+.menuIcon {
+    position: absolute;
+    right: 1.4rem;
+    display: none;
+    align-items: center;
+}
+
+
+@media screen and (max-width: 550px) {
+  .navbar{
+    padding: 0.5rem;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .leftNavList{
+    gap: 0.5rem;
+    flex-direction: column;
+}
+
+  .rightNavList{
+    margin-top: 0.5rem;
+    gap: 0.5rem;
+    flex-direction: column;
+}  
+
+
+  .menuIcon {
+    display: block;
+    margin-top: 1vh;
+  }
+
+  .menuOpen{
+    display: block;
+  }
+  
+  .menuClose{
+    display: none;
+  }
+
+}
+
+
+
+
+
+
+
+/* 
+// const Navbar = () => {
+    //   return (
+    //     <div className='w-full  min-h-[10vh] flex items-center justify-between bg-[#4E148C] py-4 sticky top-0 z-10' >
+    //       <div className="flex gap-20">
+    //       <h3 className='ml-10 font-bold font-mono hover:cursor-pointer text-[#ffff] text-2xl' >ShopVibe</h3>
+    //       <ul className='flex gap-10 text-[#ffff] items-center'>
+    //      <Link to="/">
+    //      <li className='hover:cursor-pointer hover:text-[#20a2b6] font-semibold transition-colors'>Home</li>
+    //       </Link>
+    //       <Link to="/products">
+    //       <li className='hover:cursor-pointer hover:text-[#20a2b6] font-semibold transition-colors'>Products</li>
+    //       </Link>
+    //       <Link to="/about">
+    //        <li className='hover:cursor-pointer hover:text-[#20a2b6] font-semibold transition-colors'>About</li>
+    //        </Link>   
+    //       </ul>
+    //       </div>  
+      
+    //       <div className="right">
+    //       <div className="flex items-center mr-10 gap-10">
+    //       <Link to="/wishlist">
+    //         <BsFillBookmarkHeartFill className={`hover:cursor-pointer hover:text-[#20a2b6] font-semibold transition-colors w-6 h-5 text-[#ffff]`}/>
+    //         </Link> 
+    //      <Link to="/cart">
+    //       <BsCartCheckFill className={`hover:cursor-pointer hover:text-[#20a2b6] font-semibold transition-colors w-6 h-6 text-[#ffff]`}/>
+    //       </Link>
+    //       <UserProfile className="hover:cursor-pointer w-6 h-6 text-[#ffff]"/>
+    //       </div>   
+    //       </div>
+    //       </div>
+    //   )
+    // }
+    // export default Navbar; */
