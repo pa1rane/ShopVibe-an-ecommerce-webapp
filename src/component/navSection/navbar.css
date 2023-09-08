@@ -10,6 +10,10 @@
     z-index: 10;
 }
 
+.active{
+    color: #FF9B21;
+}
+
 .logo{
     display: flex;
     align-items: center;

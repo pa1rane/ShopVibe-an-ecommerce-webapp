@@ -43,7 +43,7 @@ import React, { useState } from 'react';
 import {BsFillBookmarkHeartFill} from 'react-icons/bs';
 import {BsCartCheckFill} from 'react-icons/bs';
 import {GiHamburgerMenu} from 'react-icons/gi';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import UserProfile from './UserProfile';
 import './navbar.css';
 
@@ -63,23 +63,23 @@ const Navbar = () => {
       </div>
       <nav className={isMenuOpen ? 'menuOpen' : 'menuClose'}>
       <ul className='leftNavList'>
-     <Link to="/">
+     <NavLink to="/">
      <li className='home'>Home</li>
-      </Link>
-      <Link to="/products">
+      </NavLink>
+      <NavLink to="/products">
       <li className='products'>Products</li>
-      </Link>
-      <Link to="/about">
+      </NavLink>
+      <NavLink to="/about">
        <li className='about'>About</li>
-       </Link>   
+       </NavLink>   
       </ul>
       <div className="rightNavList">
-      <Link to="/wishlist">
+      <NavLink to="/wishlist">
         <BsFillBookmarkHeartFill className="wishlist"/>
-        </Link> 
-     <Link to="/cart">
+        </NavLink> 
+     <NavLink to="/cart">
       <BsCartCheckFill className="cart"/>
-      </Link>
+      </NavLink>
       <UserProfile className="userLog"/>
       </div>
       </nav>
