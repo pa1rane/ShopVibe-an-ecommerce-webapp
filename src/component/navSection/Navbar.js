@@ -45,7 +45,7 @@ import {BsCartCheckFill} from 'react-icons/bs';
 import {GiHamburgerMenu} from 'react-icons/gi';
 import { NavLink } from 'react-router-dom';
 import UserProfile from './UserProfile';
-import './navbar.css';
+import styles from './navbar.module.css';
 
 const Navbar = () => {
 
@@ -56,31 +56,31 @@ const Navbar = () => {
   }
 
   return (
-    <div className='navbar' >
-      <h3 className='logo' >ShopVibe</h3>
-      <div className='menuIcon'>
+    <div className={styles.navbar} >
+      <h3 className={styles.logo} >ShopVibe</h3>
+      <div className={styles.menuIcon}>
       <GiHamburgerMenu onClick={handleMenu}/>
       </div>
-      <nav className={isMenuOpen ? 'menuOpen' : 'menuClose'}>
-      <ul className='leftNavList'>
+      <nav className={isMenuOpen ? styles.menuOpen : styles.menuClose}>
+      <ul className={styles.leftNavList}>
      <NavLink to="/">
-     <li className='home'>Home</li>
+     <li className={styles.home}>Home</li>
       </NavLink>
       <NavLink to="/products">
-      <li className='products'>Products</li>
+      <li className={styles.products}>Products</li>
       </NavLink>
       <NavLink to="/about">
-       <li className='about'>About</li>
+       <li className={styles.about}>About</li>
        </NavLink>   
       </ul>
-      <div className="rightNavList">
+      <div className={styles.rightNavList}>
       <NavLink to="/wishlist">
-        <BsFillBookmarkHeartFill className="wishlist"/>
+        <BsFillBookmarkHeartFill className={styles.wishlist}/>
         </NavLink> 
      <NavLink to="/cart">
-      <BsCartCheckFill className="cart"/>
+      <BsCartCheckFill className={styles.cart}/>
       </NavLink>
-      <UserProfile className="userLog"/>
+      <UserProfile className={styles.userLog}/>
       </div>
       </nav>
       </div>   
