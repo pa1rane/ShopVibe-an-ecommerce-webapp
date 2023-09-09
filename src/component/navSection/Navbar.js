@@ -63,21 +63,31 @@ const Navbar = () => {
       </div>
       <nav className={isMenuOpen ? styles.menuOpen : styles.menuClose}>
       <ul className={styles.leftNavList}>
-     <NavLink to="/">
-     <li className={styles.home}>Home</li>
+     <NavLink
+      to="/"
+      className={({isActive}) => (isActive ? styles.active : "")}>
+      Home
       </NavLink>
-      <NavLink to="/products">
-      <li className={styles.products}>Products</li>
+      <NavLink 
+      to="/products"
+      className={({isActive}) => (isActive ? styles.active : "")}>
+      Products
       </NavLink>
-      <NavLink to="/about">
-       <li className={styles.about}>About</li>
+      <NavLink 
+      to="/about"
+      className={({isActive}) => (isActive ? styles.active : "")}>
+       About
        </NavLink>   
       </ul>
       <div className={styles.rightNavList}>
-      <NavLink to="/wishlist">
+      <NavLink 
+      to="/wishlist"
+      className={({isActive}) => (isActive ? styles.active : "")}>
         <BsFillBookmarkHeartFill className={styles.wishlist}/>
         </NavLink> 
-     <NavLink to="/cart">
+     <NavLink 
+     to="/cart"
+     className={({isActive}) => (isActive ? styles.active : "")}>
       <BsCartCheckFill className={styles.cart}/>
       </NavLink>
       <UserProfile className={styles.userLog}/>

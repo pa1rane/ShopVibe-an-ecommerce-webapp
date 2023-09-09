@@ -10,7 +10,11 @@
     z-index: 10;
 }
 
-.active{
+.leftNavList a.active{
+    color: #FF9B21;
+}
+
+.rightNavList *.active{
     color: #FF9B21;
 }
 
@@ -47,7 +51,7 @@
     font-weight: 500;
 }
 
-.leftNavList li:hover{
+.leftNavList a:hover{
     cursor: pointer;
     color: #FF9B21;
 }
