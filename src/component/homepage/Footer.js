@@ -5,8 +5,8 @@ import {MdCall} from 'react-icons/md';
 const Footer = () => {
   return (
     <>
-        <div className='flex justify-between px-8 py-12 bg-[#9466c6] text-[#ffff]'>
-      <div className='companyInfo'>
+        <div className='flex justify-between flex-wrap px-8 py-12 bg-[#9466c6] text-[#ffff]'>
+      <div className='companyInfo pb-4 px-4'>
        <h3 className='font-bold mb-2'>COMPANY INFO</h3>
         <p className='cursor-pointer font-serif hover:underline hover:text-[#000]'>About Us</p>
         <p className='cursor-pointer font-serif hover:underline hover:text-[#000]'>FAQs</p>
@@ -14,14 +14,14 @@ const Footer = () => {
         <p className='cursor-pointer font-serif hover:underline hover:text-[#000]'>Privacy Policy</p>
         <p className='cursor-pointer font-serif hover:underline hover:text-[#000]'>Shipping Policy</p>
       </div>
-      <div className='orderInfo'>
+      <div className='orderInfo pb-4 px-4'>
        <h3 className='font-bold mb-2'>ORDER INFO</h3>
         <p className='cursor-pointer font-serif hover:underline hover:text-[#000]'>Track Order</p>
         <p className='cursor-pointer font-serif hover:underline hover:text-[#000]'>Create Return/Exchange</p>
         <p className='cursor-pointer font-serif hover:underline hover:text-[#000]'>Shipping Policy</p>
         <p className='cursor-pointer font-serif hover:underline hover:text-[#000]'>Refund Policy</p>
       </div>
-      <div className='companyInfo'>
+      <div className='companyInfo px-4'>
        <h3 className='font-bold mb-2'>CONTACT US</h3>
         <p className='cursor-pointer font-serif hover:underline hover:text-[#000] flex items-center relative'>
         <MdEmail className = "absolute left-[-30px] w-5 h-5" />
