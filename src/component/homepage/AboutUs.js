@@ -3,12 +3,12 @@ import VisionImg from "../../assets/vision.png";
 
 const AboutUs = () => {
   return (
-    <div className="flex justify-between px-8 py-12 overflow-x-hidden">
+    <div className="flex flex-col md:flex-row overflow-x-hidden p-4">
       <div>
         <header className="text-3xl font-mono font-semibold mb-4">
           <p>Our Mission</p>
         </header>
-        <div className=" flex flex-col gap-2">
+        <div className=" flex flex-col gap-2 md:w-[60vw]">
           <p>
             Welcome to ShopVibe, we're all about making your shopping
             experience exceptional. Our core belief is that simplicity leads to
@@ -33,11 +33,11 @@ const AboutUs = () => {
           </p>
         </div>
       </div>
-      <div className="ml-12 mr-4">
+      <div className="flex justify-center items-center md:w-[40vw]">
         <img
           src={VisionImg}
           alt="Our Mission"
-          className=" w-[250px] h-[225px] "
+          className="md:w-[25vw] md:h-[45vh] h-[40vh] w-[45vw] py-4"
         />
       </div>
     </div>
