@@ -27,7 +27,7 @@ const ProductSlider = () => {
         <img
           src={sliderList[productView].image}
           alt={sliderList[productView].title}
-          className='w-[20rem] h-[25rem] hover:opacity-75'
+          className='w-[15rem] h-[15rem] md:w-[25rem] md:h-[25rem] hover:opacity-75'
         />
         </Link>
         <button onClick={handleNext} className='ml-4 text-[#9466c6] font-serif hover:text-[#4E148C] cursor-pointer'>
