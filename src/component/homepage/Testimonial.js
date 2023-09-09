@@ -27,7 +27,7 @@ const Testimonial = () => {
 
   return (
     <div className="bg-[#9466c6] py-20">
-      <div className="max-w-4xl mx-auto">
+      <div className="max-w-4xl md:mx-auto mx-10">
         <Swiper
           spaceBetween={30}
           slidesPerView={1}
@@ -45,16 +45,16 @@ const Testimonial = () => {
         >
           {testimonials.map((testimonial) => (
             <SwiperSlide key={testimonial.id}>
-              <div className="bg-white px-12 py-4 h-[270px] text-center rounded-lg shadow-lg">
+              <div className="bg-white px-12 py-4 md:h-[270px] max:h[90vh] text-center rounded-lg shadow-lg">
                 <img
                   src={testimonial.image}
                   alt={testimonial.name}
-                  className="mx-auto h-14 w-14 rounded-full mb-4"
+                  className="mx-auto md:h-14 md:w-14 h-10 w-10 rounded-full mb-4"
                 />
-                <p className="text-gray-700 mb-4">{testimonial.review}</p>
-                <div className="flex flex-col items-center justify-center">
-                  <p className="text-yellow-400 flex text-xl mr-2">{renderStarRating(testimonial.rating)}</p>
+                <p className="text-gray-700 md:mb-4 mb-2 text-xs md:text-sm">{testimonial.review}</p>
+                <div className="flex md:flex-col-reverse items-center justify-center mb-2">
                   <p className="text-gray-600 font-bold">{testimonial.name}</p>
+                  <p className="text-yellow-400 flex md:text-xl text:sm mr-2">{renderStarRating(testimonial.rating)}</p>
                 </div>
               </div>
             </SwiperSlide>
