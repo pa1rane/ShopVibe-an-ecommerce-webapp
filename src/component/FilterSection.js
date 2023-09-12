@@ -43,13 +43,15 @@ const FilterSection = () => {
   return (
     <div className="flex bg-[#9466c6] ">
       <div className="flex flex-col p-4 space-y-6 shadow-md rounded-md
-       sticky top-[10%] z-10 w-[250px] h-[500px] text-[#ffff]">
+       sticky top-[10%] z-10 w-40 md:w-[250px] h-[500px] text-[#ffff]">
         <input
           type="text"
           placeholder="Search"
           value={searchInput}
           onChange={handleChange}
-          className="p-2 border rounded-md focus:outline-none text-black font-semibold"
+          className="p-2 border rounded-md 
+          focus:outline-none text-black font-semibold
+          h-[5vh] md:h-[7vh] w-30 md:w-46"
         />
         <div>
           <h3 className="font-semibold text-xl mb-2">Category</h3>
