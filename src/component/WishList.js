@@ -36,7 +36,7 @@ const WishList = () => {
     </div>
    ) 
   return (
-    <div className="container mx-auto px-8 py-8 bg-[#9466c6]">
+    <div className="w-full px-8 py-8 bg-[#9466c6]">
       <ToastContainer
       autoClose={2000}
       theme='colored'/>

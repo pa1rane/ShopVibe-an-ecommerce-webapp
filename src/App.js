@@ -38,7 +38,7 @@ const App = () => {
   };
 
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col box-border">
       <Router>
         <ShopContext.Provider value={[state, dispatch]}>
           <Navbar/>

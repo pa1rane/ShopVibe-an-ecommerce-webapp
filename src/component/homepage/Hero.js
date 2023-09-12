@@ -14,7 +14,7 @@ const Hero = () => {
         </p>
         <div>
           <Link to="/products">
-            <button className="bg-[#ffff] font-bold py-[1.2vh] md:py-[1.5vh] px-[2.5vh] md:px-[4vh] rounded-full font-mono text-[#ffffffd2] bg-[#89C5CC] hover:bg-[#69A1AC] transition-colors">
+            <button className="font-bold py-[1.2vh] md:py-[1.5vh] px-[2.5vh] md:px-[4vh] rounded-full font-mono text-[#ffffffd2] bg-[#69A1AC] hover:bg-[#4b97a6] transition-colors">
               Shop Now
             </button>
           </Link>

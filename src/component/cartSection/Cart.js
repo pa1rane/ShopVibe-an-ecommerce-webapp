@@ -82,7 +82,7 @@ const Cart = () => {
   }
 
   return (
-    <div className="bg-[#9466c6] p-4 rounded shadow-md flex flex-col md:flex-row">
+    <div className="bg-[#9466c6] p-4 flex flex-col md:flex-row">
       <ToastContainer
       autoClose={2000}
       theme="colored"/>
