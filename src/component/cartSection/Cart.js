@@ -82,7 +82,7 @@ const Cart = () => {
   }
 
   return (
-    <div className="bg-[#9466c6] p-4 rounded shadow-md flex">
+    <div className="bg-[#9466c6] p-4 rounded shadow-md flex flex-col md:flex-row">
       <ToastContainer
       autoClose={2000}
       theme="colored"/>
@@ -98,7 +98,7 @@ const Cart = () => {
           showRemovedToast={showRemovedToast}
         />
       </div>
-      <div className="w-1/3 ml-4 mt-12">
+      <div className="md:w-1/3 mx-2 md:ml-4 mt-12">
         <CartSummery subTotal={subTotalOfCartItems}/>
       </div>
     </div>
