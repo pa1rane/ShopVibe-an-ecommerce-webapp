@@ -72,6 +72,7 @@
 }
 
 .wishlist{
+    position: relative;
     width: 1.7rem;
     height: 1.7rem;
 }
@@ -95,6 +96,7 @@
 }
 
 .cart{
+    position: relative;
     width: 1.9rem;
     height: 1.9rem;
 }
@@ -151,6 +153,14 @@
     display: none;
   }
 
+  .wishlistLength{
+    top: 8.6rem;
+  }
+
+  .cartLength{
+    top: 11rem;
+  }
+
 }
 
 @media screen and (max-width: 350px) {
@@ -165,5 +175,13 @@
     .leftNavList{
         gap: 1vw;
     }
+
+    .wishlistLength{
+        top: 7rem;
+      }
+    
+      .cartLength{
+        top: 9.5rem;
+      }
     
 }

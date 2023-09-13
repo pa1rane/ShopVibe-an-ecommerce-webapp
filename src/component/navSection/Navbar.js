@@ -50,26 +50,22 @@ const Navbar = () => {
           </NavLink>
         </ul>
         <div className={styles.rightNavList}>
-          <div>
-            {wishlistLength > 0 && (
-              <p className={styles.wishlistLength}>{wishlistLength}</p>
-            )}
             <NavLink
               to="/wishlist"
               className={({ isActive }) => (isActive ? styles.active : "")}
-            >
+            > 
+              {wishlistLength > 0 && (
+              <p className={styles.wishlistLength}>{wishlistLength}</p>
+            )}
               <BsFillBookmarkHeartFill className={styles.wishlist} />
             </NavLink>
-          </div>
-          <div>
-            {cartLength > 0 && <p className={styles.cartLength}>{cartLength}</p>}
             <NavLink
               to="/cart"
               className={({ isActive }) => (isActive ? styles.active : "")}
             >
+              {cartLength > 0 && <p className={styles.cartLength}>{cartLength}</p>}
               <BsCartCheckFill className={styles.cart} />
             </NavLink>
-          </div>
           <UserProfile className={styles.userLog} />
         </div>
       </nav>
