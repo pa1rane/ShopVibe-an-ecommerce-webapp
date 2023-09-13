@@ -59,7 +59,7 @@ const ProductList = ({ products }) => {
               <button
                 type="button"
                 className="hover:opacity-75 rounded-md bg-[#ea54a2] text-[#ffff]
-                 md:text-sm text-xs font-semibold p-1 md:w-36 w-20"
+                 md:text-sm text-xs font-semibold p-1.5 md:w-36 w-20"
                 onClick={() => {
                   showWishlistToast();
                   dispatch({ type: "add_to_wishlist", message: li });

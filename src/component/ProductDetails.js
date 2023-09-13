@@ -61,12 +61,13 @@ const ProductDetails = () => {
       autoClose={2000}
       theme="colored"
       />
-      <div className="max-w-screen-xl mx-auto px-4 py-8 gap-60 bg-white border rounded-lg shadow-md md:flex">
+      <div className="max-w-screen-xl mx-auto px-4 py-8 md:gap-60 bg-white border
+       md:rounded-lg md:shadow-md flex flex-col md:flex-row items-center" >
         <div>
           <img
             src={product.image}
             alt={product.title}
-            className="w-30 h-80 ml-10"
+            className="md:w-30 md:h-80 w-30 h-60 md:ml-10"
           />
         </div>
         <div className="md:w-1/2 md:pl-8 mt-0 flex flex-col justify-center items-center">
