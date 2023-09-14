@@ -17,6 +17,8 @@ npm start
 - Home Page 
 
 - Product Listing Page
+  
+- Product Details Page
 
 - Navigaion 
 
@@ -37,6 +39,18 @@ npm start
 - Loaders
 
 - Toasts
+
+  
+## Technology Used
+⚙️ ReactJS
+⚙️ React Context API + useReducer
+⚙️ Tailwind CSS
+⚙️ React Router
+⚙️ Swiper Js
+⚙️ Auth0
+⚙️ React Toastify
+
+
 ## Authors
 
 - [@pa1rane](https://www.github.com/pa1rane)
