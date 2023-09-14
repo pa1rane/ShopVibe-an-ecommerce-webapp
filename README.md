@@ -42,4 +42,4 @@ npm start
 - [@pa1rane](https://www.github.com/pa1rane)
 ## Social Links
 * [LinkedIn](https://www.linkedin.com/in/pavan-rane-109258168/)
-* [Twitter](https://www.github.com/pa1rane/)
+* [Twitter](https://www.twitter.com/pa1rane/)
