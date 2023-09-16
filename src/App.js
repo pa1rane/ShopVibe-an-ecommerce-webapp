@@ -51,7 +51,7 @@ const App = () => {
         <ShopContext.Provider value={[state, dispatch]}>
           <Navbar />
           {loading ? (
-            <div className="flex items-center justify-center h-screen">
+            <div className="flex items-center justify-center md:h-screen h-[50%]">
               <GridLoader
                 color="#4E148C"
                 loading={loading}
