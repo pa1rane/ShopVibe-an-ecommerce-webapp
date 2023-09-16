@@ -1,15 +1,23 @@
-import React, { useReducer, useEffect, createContext, useState } from "react";
+import React, {
+  useReducer,
+  useEffect,
+  createContext,
+  useState,
+  lazy,
+  Suspense,
+} from "react";
 import shopReducer from "./ShopReducer";
 import axios from "axios";
-import Products from "./Products";
 import GridLoader from "react-spinners/GridLoader";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import ProductDetails from "./component/ProductDetails";
-import Navbar from "./component/navSection/Navbar";
-import WishList from "./component/WishList";
-import Cart from "./component/cartSection/Cart";
-import Homepage from "./component/homepage/Homepage";
-import AboutUs from "./component/homepage/AboutUs";
+
+const Products = lazy(() => import("./Products"));
+const ProductDetails = lazy(() => import("./component/ProductDetails"));
+const Navbar = lazy(() => import("./component/navSection/Navbar"));
+const WishList = lazy(() => import("./component/WishList"));
+const Cart = lazy(() => import("./component/cartSection/Cart"));
+const Homepage = lazy(() => import("./component/homepage/Homepage"));
+const AboutUs = lazy(() => import("./component/homepage/AboutUs"));
 
 const ShopContext = createContext();
 const App = () => {
@@ -41,25 +49,67 @@ const App = () => {
     <div className="flex flex-col box-border">
       <Router>
         <ShopContext.Provider value={[state, dispatch]}>
-          <Navbar/>
+          <Navbar />
           {loading ? (
             <div className="flex items-center justify-center h-screen">
-            <GridLoader
-              color="#4E148C"
-              loading={loading}
-              size={150}
-              aria-label="Loading Spinner"
-              data-testid="loader"
-            />
+              <GridLoader
+                color="#4E148C"
+                loading={loading}
+                size={150}
+                aria-label="Loading Spinner"
+                data-testid="loader"
+              />
             </div>
           ) : (
             <Routes>
-              <Route path="/" element={<Homepage />}/>
-              <Route path="products" element={<Products />} />
-              <Route path="wishlist" element={<WishList />} />
-              <Route path="cart" element={<Cart />} />
-              <Route path="/products/:id" element={<ProductDetails />} />
-              <Route path="/about" element={<AboutUs/>}/>
+              <Route
+                path="/"
+                element={
+                  <Suspense fallback={<div>Loading...</div>}>
+                    <Homepage />
+                  </Suspense>
+                }
+              />
+              <Route
+                path="products"
+                element={
+                  <Suspense fallback={<div>Loading...</div>}>
+                    <Products />
+                  </Suspense>
+                }
+              />
+              <Route
+                path="wishlist"
+                element={
+                  <Suspense fallback={<div>Loading...</div>}>
+                    <WishList />
+                  </Suspense>
+                }
+              />
+              <Route
+                path="cart"
+                element={
+                  <Suspense fallback={<div>Loading...</div>}>
+                    <Cart />
+                  </Suspense>
+                }
+              />
+              <Route
+                path="/products/:id"
+                element={
+                  <Suspense fallback={<div>Loading...</div>}>
+                    <ProductDetails />
+                  </Suspense>
+                }
+              />
+              <Route
+                path="/about"
+                element={
+                  <Suspense fallback={<div>Loading...</div>}>
+                    <AboutUs />
+                  </Suspense>
+                }
+              />
             </Routes>
           )}
         </ShopContext.Provider>
